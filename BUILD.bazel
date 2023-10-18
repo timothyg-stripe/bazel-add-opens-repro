@@ -1,0 +1,11 @@
+java_library(
+    name = "test",
+    srcs = glob(["src/main/java/com/example/*.java"]),
+    add_opens = ["java.base/java.lang"],
+)
+
+java_binary(
+    name = "TestMain",
+    main_class = "com.example.TestMain",
+    runtime_deps = [":test"],
+)
